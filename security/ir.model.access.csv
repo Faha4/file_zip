@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_prime_exep_prime_exep,prime_exep.prime_exep,model_prime_exep_prime_exep,,1,0,0,0

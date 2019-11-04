@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+      <record id="view_zip_virement" model="ir.ui.view">
+          <field name="name">hr.payslip.virt.zip</field>
+          <field name="model">hr.payslip.virt</field>
+          <field name="inherit_id" ref="hr_payslip_report.hr_payslip_report_virt_form_view"/>
+          <field name="arch" type="xml">
+              
+                  <xpath expr="//field[@name='payslip_char']" position="after">
+                      <field name="pass_crypt" string="Mot de passe" attrs="{'invisible': ['|',('type_paiement','=','export'), ('type_paiement','=','cheque')]}"/>
+                  </xpath>
+                  
+                  <xpath expr="//button[@name='do_export']" position="after">
+                      <button type="object" name="do_export_zip" string="Virement en zip"  class="oe_highlight" attrs="{'invisible': [('type_paiement','!=','virement')]}"/>
+                  </xpath>
+                 
+          </field>
+      </record>
+    
+  </data>
+</odoo>
